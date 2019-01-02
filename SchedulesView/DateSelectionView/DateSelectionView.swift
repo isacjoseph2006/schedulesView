@@ -73,8 +73,12 @@ extension DateSelectionView:UICollectionViewDelegate,UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView,didSelectItemAt indexPath: IndexPath)
     {
         collectionView.deselectItem(at: indexPath, animated: false)
-        selectedDate = getDateForCell(index: indexPath.row)
-        self.delegate?.selectedDate(date: selectedDate)
+        let date = getDateForCell(index: indexPath.row)
+        if !Calendar.current.isDate(date, inSameDayAs: selectedDate)
+        {
+            self.delegate?.selectedDate(date: selectedDate)
+        }
+        selectedDate = date
     }
     
     

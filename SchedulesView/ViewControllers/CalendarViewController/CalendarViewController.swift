@@ -13,13 +13,22 @@ class CalendarViewController: UIViewController
     @IBOutlet weak var tblHours: UITableView!
     @IBOutlet weak var dateSelectionView: DateSelectionView!
     
+    var animationType : CATransitionSubtype?
+    
     var selectedDate = Date()
     {
         willSet(newDate)
         {
-            print(newDate)
-            print(selectedDate)
+            self.animationType = newDate < selectedDate ? CATransitionSubtype.fromLeft : CATransitionSubtype.fromRight
+            self.addSwipeAnimation()
         }
+        
+        didSet
+        {
+            self.title = selectedDate.monthString()
+            self.tblHours.reloadData()
+        }
+        
     }
     
     override func viewDidLoad()
@@ -34,8 +43,20 @@ class CalendarViewController: UIViewController
         self.tblHours.delegate = self
         self.tblHours.dataSource = self
         self.tblHours.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        self.title = Date().monthString()
     }
 
+    func addSwipeAnimation()
+    {
+        let animation = CATransition()
+        //animation.delegate = self
+        animation.type = .push
+        animation.subtype = animationType
+        animation.duration = 0.50
+        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        self.tblHours.layer.add(animation, forKey: kCATransition)
+        CATransaction.commit()
+    }
 }
 
 extension CalendarViewController:DateSelectionViewDelegate

@@ -17,4 +17,12 @@ extension Date
         let dateString = formatter.string(from: self)
         return dateString
     }
+    
+    func monthString() -> String
+    {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "LLLL"
+        let dateString = formatter.string(from: self)
+        return dateString
+    }
 }
