@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol DateSelectionViewDelegate: class
+{
+    func selectedDate(date:Date)
+}
+
 class DateSelectionView: UIView
 {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var datesCollectionView: UICollectionView!
     
+    weak var delegate: DateSelectionViewDelegate?
     var selectedDate = Date()
     {
         didSet
@@ -68,6 +74,7 @@ extension DateSelectionView:UICollectionViewDelegate,UICollectionViewDataSource,
     {
         collectionView.deselectItem(at: indexPath, animated: false)
         selectedDate = getDateForCell(index: indexPath.row)
+        self.delegate?.selectedDate(date: selectedDate)
     }
     
     
@@ -89,6 +96,6 @@ extension DateSelectionView:UICollectionViewDelegate,UICollectionViewDataSource,
     {
         let maxWidth = UIScreen.main.bounds.width
         let size = maxWidth / 7
-        return CGSize(width: size, height: size)
+        return CGSize(width: size, height: 34)
     }
 }

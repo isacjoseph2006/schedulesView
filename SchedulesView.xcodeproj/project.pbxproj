@@ -17,6 +17,7 @@
 		4B15DC2221D7D0C20059FB95 /* DatesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B15DC2021D7D0C20059FB95 /* DatesCollectionViewCell.swift */; };
 		4B15DC2321D7D0C20059FB95 /* DatesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B15DC2121D7D0C20059FB95 /* DatesCollectionViewCell.xib */; };
 		4B15DC2521D870BA0059FB95 /* Date+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B15DC2421D870BA0059FB95 /* Date+Extras.swift */; };
+		4B15DC3021DD0D3E0059FB95 /* HrsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B15DC2F21DD0D3E0059FB95 /* HrsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		4B15DC2021D7D0C20059FB95 /* DatesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesCollectionViewCell.swift; sourceTree = "<group>"; };
 		4B15DC2121D7D0C20059FB95 /* DatesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatesCollectionViewCell.xib; sourceTree = "<group>"; };
 		4B15DC2421D870BA0059FB95 /* Date+Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extras.swift"; sourceTree = "<group>"; };
+		4B15DC2F21DD0D3E0059FB95 /* HrsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HrsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,19 +66,52 @@
 		4B15DC0321D7473D0059FB95 /* SchedulesView */ = {
 			isa = PBXGroup;
 			children = (
+				4B15DC2D21DD05C10059FB95 /* Extensions */,
+				4B15DC2C21DD05110059FB95 /* ViewControllers */,
+				4B15DC2B21DD04F80059FB95 /* DateSelectionView */,
 				4B15DC0421D7473D0059FB95 /* AppDelegate.swift */,
-				4B15DC1821D747B00059FB95 /* CalendarViewController.swift */,
-				4B15DC1A21D74A8C0059FB95 /* DateSelectionView.swift */,
-				4B15DC2021D7D0C20059FB95 /* DatesCollectionViewCell.swift */,
-				4B15DC2421D870BA0059FB95 /* Date+Extras.swift */,
-				4B15DC2121D7D0C20059FB95 /* DatesCollectionViewCell.xib */,
-				4B15DC1C21D74A9B0059FB95 /* DateSelectionView.xib */,
 				4B15DC0821D7473D0059FB95 /* Main.storyboard */,
 				4B15DC0B21D7473F0059FB95 /* Assets.xcassets */,
 				4B15DC0D21D7473F0059FB95 /* LaunchScreen.storyboard */,
 				4B15DC1021D7473F0059FB95 /* Info.plist */,
 			);
 			path = SchedulesView;
+			sourceTree = "<group>";
+		};
+		4B15DC2B21DD04F80059FB95 /* DateSelectionView */ = {
+			isa = PBXGroup;
+			children = (
+				4B15DC1A21D74A8C0059FB95 /* DateSelectionView.swift */,
+				4B15DC2021D7D0C20059FB95 /* DatesCollectionViewCell.swift */,
+				4B15DC2121D7D0C20059FB95 /* DatesCollectionViewCell.xib */,
+				4B15DC1C21D74A9B0059FB95 /* DateSelectionView.xib */,
+			);
+			path = DateSelectionView;
+			sourceTree = "<group>";
+		};
+		4B15DC2C21DD05110059FB95 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4B15DC2E21DD0D0C0059FB95 /* CalendarViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4B15DC2D21DD05C10059FB95 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4B15DC2421D870BA0059FB95 /* Date+Extras.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4B15DC2E21DD0D0C0059FB95 /* CalendarViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4B15DC1821D747B00059FB95 /* CalendarViewController.swift */,
+				4B15DC2F21DD0D3E0059FB95 /* HrsTableViewCell.swift */,
+			);
+			path = CalendarViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B15DC2221D7D0C20059FB95 /* DatesCollectionViewCell.swift in Sources */,
+				4B15DC3021DD0D3E0059FB95 /* HrsTableViewCell.swift in Sources */,
 				4B15DC2521D870BA0059FB95 /* Date+Extras.swift in Sources */,
 				4B15DC1921D747B00059FB95 /* CalendarViewController.swift in Sources */,
 				4B15DC1B21D74A8C0059FB95 /* DateSelectionView.swift in Sources */,
